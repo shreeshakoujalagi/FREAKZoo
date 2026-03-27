@@ -7,6 +7,7 @@ import {
     PieChart, Pie, Cell
 } from 'recharts';
 import { Zap, Brain, Users, Sparkles, TrendingUp, ShieldCheck } from 'lucide-react';
+import TrendingList from '../feed/TrendingList';
 
 const data = [
     { name: 'Mon', impact: 400 },
@@ -40,7 +41,7 @@ const ZooDashboard = () => {
                 {/* Vibe Energy */}
                 <div className="flex flex-col items-center">
                     <div className="relative w-24 h-24 flex items-center justify-center">
-                        <svg className="w-full h-full transform -rotate-90">
+                        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 96 96">
                             <circle cx="48" cy="48" r="40" stroke="rgba(255,255,255,0.05)" strokeWidth="8" fill="none" />
                             <motion.circle
                                 cx="48" cy="48" r="40" stroke="#8A2BE2" strokeWidth="8" fill="none"
@@ -59,7 +60,7 @@ const ZooDashboard = () => {
                 {/* Authenticity */}
                 <div className="flex flex-col items-center">
                     <div className="relative w-24 h-24 flex items-center justify-center">
-                        <svg className="w-full h-full transform -rotate-90">
+                        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 96 96">
                             <circle cx="48" cy="48" r="40" stroke="rgba(255,255,255,0.05)" strokeWidth="8" fill="none" />
                             <motion.circle
                                 cx="48" cy="48" r="40" stroke="#00FFB3" strokeWidth="8" fill="none"
@@ -78,7 +79,7 @@ const ZooDashboard = () => {
                 {/* Collab Strength */}
                 <div className="flex flex-col items-center">
                     <div className="relative w-24 h-24 flex items-center justify-center">
-                        <svg className="w-full h-full transform -rotate-90">
+                        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 96 96">
                             <circle cx="48" cy="48" r="40" stroke="rgba(255,255,255,0.05)" strokeWidth="8" fill="none" />
                             <motion.circle
                                 cx="48" cy="48" r="40" stroke="#00E5FF" strokeWidth="8" fill="none"
@@ -145,6 +146,10 @@ const ZooDashboard = () => {
                         </motion.div>
                     ))}
                 </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-white/10">
+                <TrendingList />
             </div>
         </div>
     );

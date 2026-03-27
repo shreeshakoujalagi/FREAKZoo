@@ -7,7 +7,6 @@ import DropCard from '../../components/cards/DropCard';
 import StoryBubble from '../../components/ui/StoryBubble';
 import VibePost from '../../components/feed/VibePost';
 import ReblogCard from '../../components/feed/ReblogCard';
-import TrendingList from '../../components/feed/TrendingList';
 import ReelCard from '../../components/feed/ReelCard';
 import ReelViewer from '../../components/feed/ReelViewer';
 import { Plus, PawPrint, Bell, MessageCircle, X } from 'lucide-react';
@@ -50,27 +49,28 @@ export default function HomePage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 backdrop-blur-md md:hidden"
+                        className="fixed inset-0 z-[100] flex items-end md:items-stretch justify-end bg-black/60 backdrop-blur-sm"
                         onClick={() => setIsMessagesOpen(false)}
                     >
                         <motion.div
-                            initial={{ y: '100%' }}
-                            animate={{ y: 0 }}
-                            exit={{ y: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="w-full bg-[#0F0F14] rounded-t-2xl max-h-[85vh] overflow-y-auto"
+                            initial={{ x: '100%', y: 50, opacity: 0 }}
+                            animate={{ x: 0, y: 0, opacity: 1 }}
+                            exit={{ x: '100%', y: 50, opacity: 0 }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                            className="w-full md:w-[400px] bg-[#0F0F14] rounded-t-2xl md:rounded-none md:border-l md:border-white/10 flex flex-col shadow-2xl max-h-[85vh] md:max-h-full h-full"
                             onClick={e => e.stopPropagation()}
                         >
-                            <div className="sticky top-0 bg-[#1A1A22] z-10 flex justify-center p-2 rounded-t-2xl items-center border-b border-white/10">
-                                <div className="w-12 h-1.5 bg-white/20 rounded-full" />
+                            <div className="sticky top-0 bg-[#1A1A22] z-10 flex justify-between p-4 rounded-t-2xl md:rounded-none items-center border-b border-white/10 shadow-md">
+                                <h2 className="text-white font-bold text-lg hidden md:block">inbox_</h2>
+                                <div className="w-12 h-1.5 bg-white/20 rounded-full md:hidden mx-auto" />
                                 <button
-                                    className="absolute right-4 text-[#B3B3C6] hover:text-white"
+                                    className="p-1 text-[#B3B3C6] hover:text-[#00E5FF] hover:bg-white/5 rounded-full transition-all md:absolute md:right-4"
                                     onClick={() => setIsMessagesOpen(false)}
                                 >
                                     <X size={20} />
                                 </button>
                             </div>
-                            <div className="p-4 pb-12">
+                            <div className="flex-1 overflow-hidden flex flex-col relative bg-[#0F0F14]">
                                 <MessagesSidebar />
                             </div>
                         </motion.div>
@@ -160,18 +160,7 @@ export default function HomePage() {
 
             {/* Right Sidebar (Desktop Only) */}
             <div className="hidden md:block w-80 pt-20 pl-4 sticky top-4 h-screen pb-20 overflow-y-auto scrollbar-hide">
-                <TrendingList />
 
-                <MessagesSidebar />
-
-                <div className="mt-6 bg-gradient-to-br from-[#1A1A22] to-[#0F0F14] rounded-xl p-6 border border-white/5 relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-[#FF2E93] rounded-full blur-[50px] opacity-20 group-hover:opacity-40 transition-opacity" />
-                    <h3 className="text-lg font-bold text-white mb-2 relative z-10">Premium Vibes? 💎</h3>
-                    <p className="text-sm text-[#B3B3C6] mb-4 relative z-10">Unlock exclusive badges, themes, and more visibility.</p>
-                    <button className="w-full py-2 bg-white text-black font-bold rounded-lg hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all relative z-10">
-                        Get FreakZoo+
-                    </button>
-                </div>
 
                 <p className="text-[10px] text-[#B3B3C6] mt-8 text-center opacity-50">
                     Privacy • Terms • Vibes • © 2026 FREAKZoo

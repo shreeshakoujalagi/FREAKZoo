@@ -5,8 +5,8 @@ import { TRENDING_TAGS } from '../../lib/mock-data';
 
 export default function TrendingList() {
     return (
-        <div className="bg-[#1A1A22] rounded-xl p-6 border border-white/5 space-y-4 shadow-lg sticky top-6">
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8A2BE2] to-[#00E5FF] mb-2">Trending</h3>
+        <div className="space-y-4">
+            <h3 className="text-[10px] font-bold text-[#B3B3C6] uppercase tracking-[0.2em] mb-4">Trending Now</h3>
 
             <div className="space-y-4">
                 {TRENDING_TAGS.map((tag, index) => (
