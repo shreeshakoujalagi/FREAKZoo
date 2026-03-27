@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "ab5a1a29-5e40-4251-af2a-fafdf3a28a7f"
+      }
+    },
+    "android": {
+      "package": "com.shreesha_koujalagi.freakzooweb"
+    }
+  }
+}
